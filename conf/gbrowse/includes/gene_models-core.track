@@ -2,20 +2,35 @@ category     = Genes
 key          = Gene Models
 bgcolor      = sub {
 	     my $f = shift;
-	     return 'gray'   if $f->method =~ /pseudogene/i;
-             return 'gray'   if $f->source =~ /pseudogene/i;
-	     return 'gray'   if $f->source =~ /ncrna|non_coding/i;
-	     return 'violet' if $f->strand > 0;
-	     return 'turquoise';
-	     }
+	if ($f->type =~ /exon/i) {
+	   return 'gray';
+	} else {
+	 	return 'violet' if $f->strand > 0;
+		return 'turquoise';
+        } 	   
+     }
 fgcolor      = black
 utr_color    = gray
 font2color   = blue
 height  = sub {
 	my $feature = shift;
-	return $feature->type =~ /transcript|UTR|CDS/i ? 10 : 6;
-
+	# TH: This won't work unless with have custom sources like WormBase_ncRNA
+        #  	return $feature->type =~ /transcript|UTR|CDS/i ? 10 : 6;
+	# exons are ONLY used in non-coding and pseudogene features.
+	if ($feature->type =~ /exon/i) {
+	   return 6;
+	} else {
+	   return 10;
+        } 	   
+	
+#	# Here's another approach based on children of the parent feature.
+#	my ($child) = eval { $feature->get_SeqFeatures };
+#	my $type    = $child->primary_tag;
+#	# We need to include gene here as well or the
+#	# container squishes everything!
+ #       return ($type =~ /mrna|gene/i) ? 10 : 10;
 	}
+
 # This only applies to C. elegans, C. briggsae, C. japonica, C. remanei, and C. brenneri.
 # All others that include this config file will need to override.
 citation = Protein-coding gene structures result from the integration of a variety 

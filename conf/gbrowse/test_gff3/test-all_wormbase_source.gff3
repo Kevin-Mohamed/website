@@ -1,0 +1,18 @@
+##gff-version 3
+##sequence-region I 1 15072434
+I	WormBase	gene	4119	10230	.	-	.	ID=Gene:WBGene00022277;Name=WBGene00022277;Locus=homt-1;Public_name=homt-1;Notes=This is a sample note that will be displayed in the description
+I	WormBase	mRNA	4119	10230	.	-	.	ID=Transcript:Y74C9A.3;Parent=Gene:WBGene00022277;Name=Y74C9A.3;gene=WBGene00022277
+I	WormBase	exon	4119	4358	.	-	.	Parent=Transcript:Y74C9A.3
+I	WormBase	three_prime_UTR	4119	4220	.	-	.	Parent=Transcript:Y74C9A.3
+I	WormBase	CDS	4221	4358	.	-	0	ID=CDS:Y74C9A.3;Parent=Transcript:Y74C9A.3;Name=Y74C9A.3;wormpep=CE:CE28146;status=Confirmed;gene=WBGene00022277
+I	WormBase	CDS	5195	5296	.	-	0	ID=CDS:Y74C9A.3;Parent=Transcript:Y74C9A.3;Whatever=yeahright
+I	WormBase	CDS	6037	6327	.	-	0	ID=CDS:Y74C9A.3;Parent=Transcript:Y74C9A.3
+I	WormBase	CDS	9727	9846	.	-	0	ID=CDS:Y74C9A.3;Parent=Transcript:Y74C9A.3
+I	WormBase	CDS	10095	10148	.	-	0	ID=CDS:Y74C9A.3;Parent=Transcript:Y74C9A.3
+I	WormBase	gene	31523	31543	.	+	.	ID=Gene:WBGene00170953;Name=WBGene00170953;interpolated_map_position=-21.2438;locus=21ur-15479
+I	WormBase	ncRNA	31523	31543	.	+	.	ID=Transcript:Y74C9A.7;Parent=Gene:WBGene00170953;Name=Y74C9A.7;gene=WBGene00170953
+I	WormBase	exon	31523	31543	.	+	.	Parent=Transcript:Y74C9A.7
+I	WormBase	exon	31600	31700	.	+	.	Parent=Transcript:Y74C9A.7
+
+
+
